@@ -1,0 +1,51 @@
+============================================================
+Event-driven Simulation Algorithm is as follows:
+
+initialize every gate output value to don't-cares;
+initialize event list for each level in the circuit;
+for each input vector
+{
+    for each level in the circuit
+    {
+        for each event in event_list(a)
+	{
+	    reset in_event_list[g];
+	    evaluate(g);
+
+	    // only schedule successor gates to be evaluated if g has
+	    // changed in value
+	    if (value of g different from previous time-frame/vector)
+	    {
+		for all fanout gates, b, of g
+		{
+		    if (b not in event_list yet)
+		    {
+			insert b into event_list[level of b];
+			set in_event_list[b];
+		    }
+		}
+	    }
+	}
+    }
+}
+
+=============================================================
+
+evaluate(g)
+{
+    switch (gateType(g))
+    {
+	case G_AND:
+	    out = 1;
+	    for all input of g
+	    {
+		// AND all inputs together here
+	    }
+	    break;
+	case G_OR:
+	   ...
+	case ...
+    }
+}
+
+=============================================================
