@@ -6,6 +6,8 @@ Description:
     
 Files:
 
+    basicAlg                           : Basic Algorithm
+    
     logic_simulator_pointer.c          : C/C++ code
 
     c17.lev                            : Input circuit file (for e.g. c17) in lev format
